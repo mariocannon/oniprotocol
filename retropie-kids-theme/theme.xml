@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<!--
+  ============================================================
+   BIG BLOCKS  -  a super-simple RetroPie / EmulationStation
+   theme made for young players (ages 5-10).
+
+   * Games are shown as BIG box-art blocks in a grid.
+   * The selected game glows with a bright purple frame.
+   * Almost no text - kids just pick the picture they like.
+
+   Inspired by the SNES box-art carousel look.
+  ============================================================
+-->
+<theme>
+  <formatVersion>7</formatVersion>
+
+  <!-- ================= SYSTEM SELECT (pick a console) ================= -->
+  <view name="system">
+
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <path>./art/background.png</path>
+      <tile>false</tile>
+      <zIndex>0</zIndex>
+    </image>
+
+    <text name="titlebar" extra="true">
+      <pos>0.5 0.08</pos>
+      <origin>0.5 0.5</origin>
+      <text>PICK A CONSOLE</text>
+      <color>EDE9FE</color>
+      <fontSize>0.06</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <carousel name="systemcarousel">
+      <type>horizontal</type>
+      <size>1 0.34</size>
+      <pos>0 0.40</pos>
+      <color>8B5CF6E6</color>
+      <logoScale>1.35</logoScale>
+      <logoSize>0.34 0.20</logoSize>
+      <maxLogoCount>3</maxLogoCount>
+      <zIndex>40</zIndex>
+    </carousel>
+
+    <!-- Console name shown big inside the carousel -->
+    <text name="logoText">
+      <fontSize>0.085</fontSize>
+      <color>FFFFFF</color>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+    </text>
+
+    <text name="systemInfo">
+      <pos>0.5 0.86</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.9 0.06</size>
+      <color>A78BFA</color>
+      <fontSize>0.04</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <helpsystem name="help">
+      <pos>0.5 0.955</pos>
+      <origin>0.5 0.5</origin>
+      <textColor>EDE9FEFF</textColor>
+      <iconColor>A78BFAFF</iconColor>
+      <fontSize>0.042</fontSize>
+    </helpsystem>
+
+  </view>
+
+  <!-- ================= GRID  (the main game menu) ================= -->
+  <view name="grid">
+
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <path>./art/background.png</path>
+      <tile>false</tile>
+      <zIndex>0</zIndex>
+    </image>
+
+    <text name="gridtitle" extra="true">
+      <pos>0.5 0.075</pos>
+      <origin>0.5 0.5</origin>
+      <text>CHOOSE A GAME</text>
+      <color>EDE9FE</color>
+      <fontSize>0.06</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <imagegrid name="gamegrid">
+      <pos>0.5 0.55</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.94 0.74</size>
+      <margin>0.018 0.03</margin>
+      <padding>0 0</padding>
+      <autoLayout>4 2</autoLayout>
+      <autoLayoutSelectedZoom>1.10</autoLayoutSelectedZoom>
+      <imageSource>image</imageSource>
+      <gameImage>./art/placeholder.png</gameImage>
+      <folderImage>./art/placeholder.png</folderImage>
+      <scrollDirection>vertical</scrollDirection>
+      <centerSelection>true</centerSelection>
+      <scrollLoop>false</scrollLoop>
+      <animateSelection>true</animateSelection>
+      <zIndex>20</zIndex>
+    </imagegrid>
+
+    <gridtile name="default">
+      <size>1 1</size>
+      <padding>18 18</padding>
+      <backgroundImage>./art/tile_default.png</backgroundImage>
+      <backgroundCornerSize>64 64</backgroundCornerSize>
+    </gridtile>
+
+    <gridtile name="selected">
+      <backgroundImage>./art/tile_selected.png</backgroundImage>
+      <backgroundCornerSize>64 64</backgroundCornerSize>
+    </gridtile>
+
+    <!-- Name of the highlighted game (ignored if unsupported) -->
+    <text name="md_name">
+      <pos>0.5 0.955</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.9 0.07</size>
+      <color>FFFFFF</color>
+      <fontSize>0.055</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <helpsystem name="help">
+      <pos>0.02 0.03</pos>
+      <textColor>EDE9FEFF</textColor>
+      <iconColor>A78BFAFF</iconColor>
+      <fontSize>0.042</fontSize>
+    </helpsystem>
+
+  </view>
+
+  <!-- ================= BASIC  (fallback list) ================= -->
+  <view name="basic">
+
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <path>./art/background.png</path>
+      <tile>false</tile>
+      <zIndex>0</zIndex>
+    </image>
+
+    <text name="logoText">
+      <pos>0.5 0.08</pos>
+      <origin>0.5 0.5</origin>
+      <color>EDE9FE</color>
+      <fontSize>0.06</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <textlist name="gamelist">
+      <pos>0.08 0.18</pos>
+      <size>0.84 0.72</size>
+      <selectorColor>8B5CF6FF</selectorColor>
+      <selectorHeight>0.09</selectorHeight>
+      <selectedColor>FFFFFFFF</selectedColor>
+      <primaryColor>EDE9FEFF</primaryColor>
+      <secondaryColor>A78BFAFF</secondaryColor>
+      <fontSize>0.062</fontSize>
+      <horizontalMargin>0.03</horizontalMargin>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>20</zIndex>
+    </textlist>
+
+    <helpsystem name="help">
+      <pos>0.5 0.955</pos>
+      <origin>0.5 0.5</origin>
+      <textColor>EDE9FEFF</textColor>
+      <iconColor>A78BFAFF</iconColor>
+      <fontSize>0.042</fontSize>
+    </helpsystem>
+
+  </view>
+
+  <!-- ================= DETAILED  (list + big art) ================= -->
+  <view name="detailed">
+
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <path>./art/background.png</path>
+      <tile>false</tile>
+      <zIndex>0</zIndex>
+    </image>
+
+    <text name="logoText">
+      <pos>0.5 0.075</pos>
+      <origin>0.5 0.5</origin>
+      <color>EDE9FE</color>
+      <fontSize>0.055</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <textlist name="gamelist">
+      <pos>0.06 0.18</pos>
+      <size>0.42 0.72</size>
+      <selectorColor>8B5CF6FF</selectorColor>
+      <selectorHeight>0.085</selectorHeight>
+      <selectedColor>FFFFFFFF</selectedColor>
+      <primaryColor>EDE9FEFF</primaryColor>
+      <secondaryColor>A78BFAFF</secondaryColor>
+      <fontSize>0.055</fontSize>
+      <horizontalMargin>0.02</horizontalMargin>
+      <alignment>left</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>20</zIndex>
+    </textlist>
+
+    <image name="md_image">
+      <pos>0.72 0.52</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.46 0.6</maxSize>
+      <zIndex>25</zIndex>
+    </image>
+
+    <text name="md_description">
+      <pos>0 0</pos>
+      <size>0 0</size>
+      <color>00000000</color>
+    </text>
+
+    <helpsystem name="help">
+      <pos>0.5 0.955</pos>
+      <origin>0.5 0.5</origin>
+      <textColor>EDE9FEFF</textColor>
+      <iconColor>A78BFAFF</iconColor>
+      <fontSize>0.042</fontSize>
+    </helpsystem>
+
+  </view>
+
+  <!-- ================= VIDEO  (same as detailed + preview) ================= -->
+  <view name="video">
+
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <path>./art/background.png</path>
+      <tile>false</tile>
+      <zIndex>0</zIndex>
+    </image>
+
+    <text name="logoText">
+      <pos>0.5 0.075</pos>
+      <origin>0.5 0.5</origin>
+      <color>EDE9FE</color>
+      <fontSize>0.055</fontSize>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>30</zIndex>
+    </text>
+
+    <textlist name="gamelist">
+      <pos>0.06 0.18</pos>
+      <size>0.42 0.72</size>
+      <selectorColor>8B5CF6FF</selectorColor>
+      <selectorHeight>0.085</selectorHeight>
+      <selectedColor>FFFFFFFF</selectedColor>
+      <primaryColor>EDE9FEFF</primaryColor>
+      <secondaryColor>A78BFAFF</secondaryColor>
+      <fontSize>0.055</fontSize>
+      <horizontalMargin>0.02</horizontalMargin>
+      <alignment>left</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>20</zIndex>
+    </textlist>
+
+    <video name="md_video">
+      <pos>0.72 0.44</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.46 0.42</size>
+      <showSnapshotNoVideo>true</showSnapshotNoVideo>
+      <showSnapshotDelay>true</showSnapshotDelay>
+      <zIndex>25</zIndex>
+    </video>
+
+    <image name="md_marquee">
+      <pos>0.72 0.82</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.44 0.14</maxSize>
+      <zIndex>26</zIndex>
+    </image>
+
+    <helpsystem name="help">
+      <pos>0.5 0.955</pos>
+      <origin>0.5 0.5</origin>
+      <textColor>EDE9FEFF</textColor>
+      <iconColor>A78BFAFF</iconColor>
+      <fontSize>0.042</fontSize>
+    </helpsystem>
+
+  </view>
+
+</theme>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- Applies the BIG BLOCKS design to this system. -->
+<theme>
+  <formatVersion>7</formatVersion>
+  <include>./../theme.xml</include>
+</theme>
